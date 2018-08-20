@@ -10,4 +10,10 @@ export const Wrapper = styled('div')`
     padding: 2rem 0 1rem 0;
     position: relative;
     overflow: hidden;
+
+    @media (max-width: 400px) {
+        height: 100%;
+        width: 100%;
+        padding: 0;
+    }
 `;

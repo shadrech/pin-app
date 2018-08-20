@@ -7,7 +7,7 @@ import LockIcon from "./icon-lock.svg";
 const SVGWrapper = styled(LockIcon)`
     overflow: overlay;
     position: absolute;
-    height: 10rem;
+    width: 40%;
     top: 1rem;
     right: -2rem;
     fill: ${props => {
@@ -24,6 +24,10 @@ const SVGWrapper = styled(LockIcon)`
         ${props => props.verified && css`
             transform: rotateY(-180deg);
         `}
+    }
+
+    @media (max-width: 400px) {
+        width: 50%;
     }
 `;
 
