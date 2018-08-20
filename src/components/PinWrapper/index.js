@@ -3,9 +3,11 @@ import React from "react";
 import { Wrapper } from "./styles";
 import DisplayWrapper from "../DisplayWrapper";
 import ButtonsWrapper from "../ButtonsWrapper";
+import Lock from "../../assets/Lock";
 
 const PinWrapper = () => (
     <Wrapper>
+        <Lock />
         <DisplayWrapper />
         <ButtonsWrapper />
     </Wrapper>
