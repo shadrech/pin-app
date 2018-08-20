@@ -4,7 +4,7 @@ import styled from "react-emotion";
 import PinWrapper from "../components/PinWrapper";
 
 const AppWrapper = styled('div')`
-    background: linear-gradient(to bottom, #7e8b99 0%,#ccd9e2 100%);
+    background: linear-gradient(to bottom, rgba(90,113,139,0.1) 0%,rgba(90,113,139,0.5) 100%);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -8,4 +8,6 @@ export const Wrapper = styled('div')`
     flex-direction: column;
     justify-content: space-evenly;
     padding: 2rem 0 1rem 0;
+    position: relative;
+    overflow: hidden;
 `;

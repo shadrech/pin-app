@@ -4,25 +4,34 @@ import { connect } from "react-redux";
 
 import LockIcon from "./icon-lock.svg";
 
-const SvgImage = ({ svg, ...other }) => <span dangerouslySetInnerHTML={{ __html: svg }} {...other} />;
-
-const SVGWrapper = styled(SvgImage)`
+const SVGWrapper = styled(LockIcon)`
+    overflow: overlay;
+    position: absolute;
+    height: 10rem;
+    top: 1rem;
+    right: -2rem;
     fill: ${props => {
         if (props.verified) return "#65E53B";
         if (props.locked) return "#E51B1B";
         return "#5A718B";
     }};
-    opacity: 0.1;
+    opacity: 0.05;
 
     #top {
+        transform: rotateY(0deg);
+        transform-origin: 1rem 0;
+        transition: transform 1s ease;
         ${props => props.verified && css`
-        
+            transform: rotateY(-180deg);
         `}
     }
 `;
 
 const Lock = ({locked, verified}) => (
-    <img src={LockIcon} />
+    <SVGWrapper
+        locked={locked}
+        verified={verified}
+    />
 );
 
 const mapStateToProps = ({locked, verified}) => ({
