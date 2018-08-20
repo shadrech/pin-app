@@ -1,9 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import styled, {css} from "react-emotion";
 
-const Circle = styled('div')`
+export const Circle = styled('div')`
     width: 1rem;
     height: 1rem;
     border-radius: 0.5rem;
@@ -21,17 +18,3 @@ const Circle = styled('div')`
         }
     `}
 `;
-
-const PinCircle = ({number, index, verified, pinLength}) => <Circle number={number} index={index} verified={verified} pinLength={pinLength} />
-
-const mapStateToProps = state => ({
-    pinLength: state.pin.length,
-    verified: state.verified
-});
-
-PinCircle.propTypes = {
-    number: PropTypes.number,
-    index: PropTypes.number
-}
-
-export default connect(mapStateToProps)(PinCircle);

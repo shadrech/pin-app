@@ -1,25 +1,11 @@
 import React, {Component} from 'react';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import styled from "react-emotion";
 
-import Button from "./Button";
-import { addNewNumberToPin, addLastNumberToPin } from "../state/actions";
-import { MAX_PIN_LENGTH } from '../state/constants';
-
-const BtnWrapper = styled('div')`
-    display: block;
-`;
-
-const RowWrapper = styled('div')`
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 1rem;
-    &:last-child {
-        margin-bottom: 0;
-    }
-`;
+import { RowWrapper, BtnWrapper } from "./styles";
+import Button from "../Button";
+import { addNewNumberToPin, addLastNumberToPin } from "../../state/actions";
+import { MAX_PIN_LENGTH } from '../../state/constants';
 
 class ButtonsWrapper extends Component {
     handleNumberPress = number => () => {
