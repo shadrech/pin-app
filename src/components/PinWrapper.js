@@ -10,8 +10,8 @@ const Wrapper = styled('div')`
     background: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 2rem 0 2rem 0;
+    justify-content: space-evenly;
+    padding: 2rem 0 1rem 0;
 `;
 
 const PinWrapper = () => (

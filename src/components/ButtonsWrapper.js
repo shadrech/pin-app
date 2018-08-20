@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import styled from "react-emotion";
 
 import Button from "./Button";
-import { addNewNumberToPin } from "../state/actions";
+import { addNewNumberToPin, addLastNumberToPin } from "../state/actions";
+import { MAX_PIN_LENGTH } from '../state/constants';
 
 const BtnWrapper = styled('div')`
     display: block;
@@ -22,7 +23,12 @@ const RowWrapper = styled('div')`
 
 class ButtonsWrapper extends Component {
     handleNumberPress = number => () => {
-        this.props.addNewNumberToPin(number);
+        const {pinLength} = this.props;
+        if (pinLength < MAX_PIN_LENGTH - 1) {
+            this.props.addNewNumberToPin(number);
+        } else if (pinLength === MAX_PIN_LENGTH - 1) {
+            this.props.addLastNumberToPin(number);
+        }
     }
 
     render() {
@@ -52,7 +58,12 @@ class ButtonsWrapper extends Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    addNewNumberToPin
+    addNewNumberToPin,
+    addLastNumberToPin
 }, dispatch);
 
-export default connect(null, mapDispatchToProps)(ButtonsWrapper);
+const mapStateToProps = state => ({
+    pinLength: state.pin.length
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ButtonsWrapper);
