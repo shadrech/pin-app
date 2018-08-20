@@ -1,0 +1,2 @@
+export const NUMBER_PRESS = "NUMBER_PRESS";
+export const LOCK_COUNTDOWN = "LOCK_COUNTDOWN";
