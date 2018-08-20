@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import { ButtonWrapper } from "./styles";
 
-const Button = ({number, locked, onPress}) => (
+export const Button = ({number, locked, onPress}) => (
     <ButtonWrapper onClick={locked ? null : onPress(number)} locked={locked}>
         {number}
     </ButtonWrapper>
