@@ -48,8 +48,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
     addLastNumberToPin
 }, dispatch);
 
-const mapStateToProps = state => ({
-    pinLength: state.pin.length
+const mapStateToProps = ({pin}) => ({
+    pinLength: pin.length
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ButtonsWrapper);

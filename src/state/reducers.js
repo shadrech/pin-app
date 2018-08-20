@@ -1,4 +1,4 @@
-import { NUMBER_PRESS, LAST_NUMBER_PRESS, ATTEMPT_FAIL, RESET_PIN, LOCK_UP, PIN_VERIFIED, RESET_APP } from "./constants";
+import { NUMBER_PRESS, LAST_NUMBER_PRESS, ATTEMPT_FAIL, RESET_PIN, LOCK_UP, PIN_VERIFIED, RESET_APP, LOCK_COUNTDOWN_UPDATE } from "./constants";
 
 const initialState = {
     pin: [],
@@ -31,6 +31,11 @@ export default function reducer(state = initialState, action) {
                 ...state,
                 locked: true,
                 lockCountdown: 30
+            }
+        case LOCK_COUNTDOWN_UPDATE:
+            return {
+                ...state,
+                lockCountdown: action.seconds
             }
         case RESET_PIN:
             return {

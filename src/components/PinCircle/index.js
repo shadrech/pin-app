@@ -4,11 +4,12 @@ import { connect } from "react-redux";
 
 import { Circle } from "./styles";
 
-const PinCircle = ({number, index, verified, pinLength}) => <Circle number={number} index={index} verified={verified} pinLength={pinLength} />
+const PinCircle = ({number, index, verified, pinLength, locked}) => <Circle number={number} index={index} verified={verified} locked={locked} pinLength={pinLength} />
 
-const mapStateToProps = state => ({
-    pinLength: state.pin.length,
-    verified: state.verified
+const mapStateToProps = ({pin, locked, verified}) => ({
+    pinLength: pin.length,
+    verified,
+    locked
 });
 
 PinCircle.propTypes = {

@@ -1,10 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
 import { ButtonWrapper } from "./styles";
 
-const Button = ({number, onPress}) => (
-    <ButtonWrapper onClick={onPress(number)}>
+const Button = ({number, locked, onPress}) => (
+    <ButtonWrapper onClick={locked ? null : onPress(number)} locked={locked}>
         {number}
     </ButtonWrapper>
 );
@@ -14,4 +15,8 @@ Button.propTypes = {
     onPress: PropTypes.func // must be currying function
 };
 
-export default Button;
+const mapStateToProps = ({locked}) => ({
+    locked
+});
+
+export default connect(mapStateToProps)(Button);

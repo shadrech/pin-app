@@ -1,4 +1,5 @@
 import styled, {keyframes, css} from 'react-emotion';
+import { statusColor } from '../utils';
 
 export const Display = styled('div')`
     display: block;
@@ -20,6 +21,7 @@ export const SubHeading = styled('p')`
     font-family: "GothamRounded-Light";
     font-size: 0.9rem;
     margin: 0;
+    color: ${statusColor}
 `;
 
 const shake = keyframes`

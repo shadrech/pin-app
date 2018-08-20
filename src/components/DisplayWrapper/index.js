@@ -17,7 +17,7 @@ class DisplayWrapper extends Component {
         if (verified) {
             return "Passcode verified";
         } else if (locked) {
-            return `Max attempts reached. Locked for ${lockCountdown} secs`;
+            return `Locked for ${lockCountdown} secs`;
         }
         return "Please enter your passcode";
     }
@@ -36,15 +36,16 @@ class DisplayWrapper extends Component {
     }
 
     render() {
+        const {verified, locked, attempts} = this.props;
         const headingText = "enter passcodes";
         const subHeadingText = this.getSubHeadingTxt();
         return (
             <Display>
                 <UpperText>
                     <Heading>{headingText.toUpperCase()}</Heading>
-                    <SubHeading>{subHeadingText}</SubHeading>
+                    <SubHeading verified={verified} locked={locked} neutral>{subHeadingText}</SubHeading>
                 </UpperText>
-                <PinWrapper shake={this.props.attempts > this.attempts}>
+                <PinWrapper shake={attempts > this.attempts}>
                     {this.renderPinSection()}
                 </PinWrapper>
             </Display>
