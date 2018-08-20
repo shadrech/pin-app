@@ -11,8 +11,8 @@ const SVGWrapper = styled(LockIcon)`
     top: 1rem;
     right: -2rem;
     fill: ${props => {
-        if (props.verified) return "#65E53B";
-        if (props.locked) return "#E51B1B";
+        if (props.verified === "true") return "#65E53B";
+        if (props.locked === "true") return "#E51B1B";
         return "#5A718B";
     }};
     opacity: 0.05;
@@ -21,7 +21,7 @@ const SVGWrapper = styled(LockIcon)`
         transform: rotateY(0deg);
         transform-origin: 1rem 0;
         transition: transform 1s ease;
-        ${props => props.verified && css`
+        ${props => props.verified === "true" && css`
             transform: rotateY(-180deg);
         `}
     }
@@ -33,8 +33,8 @@ const SVGWrapper = styled(LockIcon)`
 
 const Lock = ({locked, verified}) => (
     <SVGWrapper
-        locked={locked}
-        verified={verified}
+        locked={`${locked}`}
+        verified={`${verified}`}
     />
 );
 
