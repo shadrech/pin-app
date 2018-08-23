@@ -1,5 +1,7 @@
 React application for entering in a passcode. Right pin is 1357
 
+![PinApp](./clip.gif)
+
 ## Requirements
 
 - Buttons should work with either touch or clicks
