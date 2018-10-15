@@ -3,7 +3,7 @@ import React from "react";
 import { Wrapper } from "./styles";
 import DisplayWrapper from "../DisplayWrapper";
 import ButtonsWrapper from "../ButtonsWrapper";
-import Lock from "../../assets/Lock";
+import Lock from "../Lock";
 
 const PinWrapper = () => (
     <Wrapper>

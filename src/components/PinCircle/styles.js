@@ -1,4 +1,4 @@
-import styled, {css} from "react-emotion";
+import styled from "react-emotion";
 import { statusColor } from "../utils";
 
 export const Circle = styled('div')`
@@ -6,19 +6,14 @@ export const Circle = styled('div')`
     height: 0.7rem;
     border-radius: 0.35rem;
     margin: 0 0.5rem;
-    background: ${statusColor};
-    opacity: ${props => props.index >= props.pinLength ? 0.2 : 1}
-    ${props => (props.index === props.pinLength - 1) && css`
-        opacity: 1;
-        background: none;
-        &:before {
-            content: "${props.number}";
-            color: ${statusColor(props)};
-            font-family: "GothamRounded-Light";
-            font-size: 1rem;
-            position: absolute;
-            transform: translateY(-0.2rem);
-            display: flex;
-        }
-    `}
+    background: ${props => props.number ? 'transparent' : statusColor(props)};
+    opacity: ${props => props.index >= props.pinLength ? 0.2 : 1};
+    display: flex;
+    align-items: center;
+`;
+
+export const CircleNumber = styled('span')`
+  color: ${({color}) => color};
+  font-family: "GothamRounded-Light";
+  font-size: 1rem;
 `;

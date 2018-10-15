@@ -5,7 +5,7 @@ import { Display, UpperText, Heading, SubHeading, PinWrapper } from "./styles";
 import PinCircle from '../PinCircle';
 import { MAX_PIN_LENGTH } from '../../state/constants';
 
-class DisplayWrapper extends Component {
+export class DisplayWrapper extends Component {
     attempts = 0
 
     componentDidUpdate(prevProps) {
@@ -43,7 +43,7 @@ class DisplayWrapper extends Component {
             <Display>
                 <UpperText>
                     <Heading>{headingText.toUpperCase()}</Heading>
-                    <SubHeading verified={verified} locked={locked} neutral>{subHeadingText}</SubHeading>
+                    <SubHeading id="display_subheading" verified={verified} locked={locked} neutral>{subHeadingText}</SubHeading>
                 </UpperText>
                 <PinWrapper shake={attempts > this.attempts}>
                     {this.renderPinSection()}

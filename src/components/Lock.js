@@ -2,7 +2,7 @@ import React from "react";
 import styled, {css} from "react-emotion";
 import { connect } from "react-redux";
 
-import LockIcon from "./icon-lock.svg";
+import LockIcon from "../assets/icon-lock.svg";
 
 const SVGWrapper = styled(LockIcon)`
     overflow: overlay;
@@ -33,6 +33,7 @@ const SVGWrapper = styled(LockIcon)`
 
 const Lock = ({locked, verified}) => (
     <SVGWrapper
+        id="svgWrapper"
         locked={`${locked}`}
         verified={`${verified}`}
     />

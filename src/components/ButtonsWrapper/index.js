@@ -20,17 +20,17 @@ class ButtonsWrapper extends Component {
     render() {
         return (
             <BtnWrapper>
-                <RowWrapper>
+                <RowWrapper className="button_row">
                     <Button number={1} onPress={this.handleNumberPress} />
                     <Button number={2} onPress={this.handleNumberPress} />
                     <Button number={3} onPress={this.handleNumberPress} />
                 </RowWrapper>
-                <RowWrapper>
+                <RowWrapper className="button_row">
                     <Button number={4} onPress={this.handleNumberPress} />
                     <Button number={5} onPress={this.handleNumberPress} />
                     <Button number={6} onPress={this.handleNumberPress} />
                 </RowWrapper>
-                <RowWrapper>
+                <RowWrapper className="button_row">
                     <Button number={7} onPress={this.handleNumberPress} />
                     <Button number={8} onPress={this.handleNumberPress} />
                     <Button number={9} onPress={this.handleNumberPress} />

@@ -1,8 +1,9 @@
 import styled, {css} from "react-emotion";
 
-export const ButtonWrapper = styled('div')`
+export const ButtonWrapper = styled('button')`
     width: 4rem;
     height: 4rem;
+    border: none;
     border-radius: 2rem;
     box-shadow: 0px 0px 1rem 0.1rem rgba(90,113,139,0.1);
     display: flex;
@@ -22,4 +23,7 @@ export const ButtonWrapper = styled('div')`
             cursor: pointer;
         }
     `}
+    &:focus {
+      outline: none;
+    }
 `;
