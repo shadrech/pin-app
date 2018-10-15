@@ -34,8 +34,8 @@ const SVGWrapper = styled(LockIcon)`
 const Lock = ({locked, verified}) => (
     <SVGWrapper
         id="svgWrapper"
-        locked={`${locked}`}
-        verified={`${verified}`}
+        locked={locked.toString()} // needed to suppress "expected non-boolean.." errors!
+        verified={verified.toString()}
     />
 );
 

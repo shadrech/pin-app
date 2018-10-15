@@ -4,6 +4,7 @@ export const ButtonWrapper = styled('button')`
     width: 4rem;
     height: 4rem;
     border: none;
+    background: white;
     border-radius: 2rem;
     box-shadow: 0px 0px 1rem 0.1rem rgba(90,113,139,0.1);
     display: flex;
