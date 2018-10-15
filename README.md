@@ -26,3 +26,7 @@ To run tests run
 ```bash
 $ yarn test
 ```
+Before running cypress tests make sure app is running (`yarn start`), then run
+```bash
+$ yarn cypress:run
+```
